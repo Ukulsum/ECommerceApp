@@ -23,6 +23,7 @@ namespace ECommerceApp.Models
 
         [Range(0, 1000, ErrorMessage = "Stock Quantity must be between 0 and 1000.")]
         public int StockQuantity { get; set; }
+
         public string ImageUrl { get; set; }
 
 

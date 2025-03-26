@@ -5,6 +5,8 @@ namespace ECommerceApp.Models
     // Represents customer feedback for a product
     public class Feedback
     {
+        public int Id { get; set; }
+
         // Foreign key to Customer
         [Required]
         public int CustomerId { get; set; }

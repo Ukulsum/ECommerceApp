@@ -25,7 +25,7 @@ namespace ECommerceApp.Models
         public int Quentity {  get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18,2")]
+        [Column(TypeName = "decimal(18,2)")]
         [Range(0.01, 10000.00, ErrorMessage = "Unit Price must be between $0.01 and $10,000.00.")]
         public decimal UnitPrice { get; set; }
 

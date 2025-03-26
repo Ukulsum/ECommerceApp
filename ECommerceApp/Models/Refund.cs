@@ -11,6 +11,7 @@ namespace ECommerceApp.Models
         // Foreign key to Cancellation
         [Required(ErrorMessage = "Cancellation ID is required.")]
         public int CancellationId { get; set; }
+
         [ForeignKey("CancellationId")]
         public Cancellation Cancellation { get; set; }
 

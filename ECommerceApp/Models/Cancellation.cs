@@ -18,12 +18,15 @@ namespace ECommerceApp.Models
         [Required(ErrorMessage = "Cancellation reason is required.")]
         [StringLength(500, ErrorMessage = "Cancellation reason cannot exceed 500 characters.")]
         public string Reason { get; set; }
+
         // Status of the cancellation request
         [Required]
         public CancellationStatus Status { get; set; }
+
         // Date and time when the cancellation was requested
         [Required]
         public DateTime RequestedAt { get; set; }
+
         // Date and time when the cancellation was processed
         public DateTime? ProcessedAt { get; set; }
 
