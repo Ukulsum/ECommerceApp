@@ -1,4 +1,5 @@
 using ECommerceApp.Data;
+using ECommerceApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,15 @@ builder.Services.AddSwaggerGen();
 // Configure EF Core with SQl Server
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("EFCoreDbConnection")));
 
+// Registering the CustomerService
+builder.Services.AddScoped<CustomerService>();
+
+builder.Services.AddCors(options => options.AddPolicy("corsPolicy",
+    policy => policy.AllowAnyOrigin()
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+    ));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,10 +36,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseCors("corsPolicy");
 
 app.Run();
