@@ -21,6 +21,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 // Registering the CustomerService
 builder.Services.AddScoped<CustomerService>();
 
+// Registering the AddressService
+builder.Services.AddScoped<AddressService>();
+
 builder.Services.AddCors(options => options.AddPolicy("corsPolicy",
     policy => policy.AllowAnyOrigin()
                     .AllowAnyHeader()

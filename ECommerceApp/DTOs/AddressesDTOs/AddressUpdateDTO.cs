@@ -11,7 +11,7 @@ namespace ECommerceApp.DTOs.AddressesDTOs
         [Required(ErrorMessage = "Address Line 1 is required.")]
         [StringLength(100, ErrorMessage = "Address Line 1 cannot exceed 100 characters.")]
         public string AddressLine1 { get; set; }
-        [Required(ErrorMessage = "Address Line 2 is required.")]
+        //[Required(ErrorMessage = "Address Line 2 is required.")]
         [StringLength(100, ErrorMessage = "Address Line 2 cannot exceed 100 characters.")]
         public string AddressLine2 { get; set; }
         [Required(ErrorMessage = "City is required.")]
